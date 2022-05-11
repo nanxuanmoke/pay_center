@@ -1,10 +1,12 @@
 <?php
-declare (strict_types = 1);
 
-namespace app;
+declare(strict_types=1);
+
+namespace app\controller;
 
 use think\App;
 use think\exception\ValidateException;
+use think\facade\View;
 use think\Validate;
 
 /**
@@ -45,6 +47,7 @@ abstract class BaseController
     {
         $this->app     = $app;
         $this->request = $this->app->request;
+        View::assign('request', $this->request);
 
         // 控制器初始化
         $this->initialize();
@@ -52,7 +55,8 @@ abstract class BaseController
 
     // 初始化
     protected function initialize()
-    {}
+    {
+    }
 
     /**
      * 验证数据
@@ -91,4 +95,11 @@ abstract class BaseController
         return $v->failException(true)->check($data);
     }
 
+    protected function setPageTitle($title)
+    {
+        if ($websiteName = getSystemConfig('website.name')) {
+            $title .= " - {$websiteName}";
+        }
+        View::assign('page_title', $title);
+    }
 }

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="csrf-token" content="{:token()}">
+  <title>{if isset($page_title)}{$page_title}{/if}</title>
+  <link rel="shortcut icon" href="__ADMIN_STATIC__/images/favicon.ico" type="image/x-icon">
+
+  {if isset($page_keywords)}
+  <meta name="keywords" content="{$page_keywords}">
+  {/if}
+  {if isset($page_description)}
+  <meta name="description" content="{$page_keywords}">
+  {/if}
+
+  {block name="head-t"}{/block}
+  {block name="head"}{/block}
+  {block name="head-b"}{/block}
+
+
+  {block name="css-lib"}
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.15.4/css/all.min.css">
+  {/block}
+
+  {block name="style-common"}
+  {/block}
+
+  {block name="css-href-t"}{/block}
+  {block name="style-t"}{/block}
+  {block name="css-href"}{/block}
+  {block name="style"}{/block}
+  {block name="css-href-b"}{/block}
+  {block name="style-b"}{/block}
+
+</head>
+
+<body>
+
+  {if isset($jsCode_alert)}
+  {$jsCode_alert|raw}
+  {/if}
+
+  <div id="app">
+
+    {block name="nav-t"}{/block}
+    {block name="nav"}
+    {/block}
+    {block name="nav-b"}{/block}
+
+    <div class="block-body">
+      {block name="main-content-t"}{/block}
+      {block name="main-content"}{/block}
+      {block name="main-content-b"}{/block}
+    </div>
+
+    {block name="footer-t"}{/block}
+
+    {block name="footer"}
+    {/block}
+
+    {block name="footer-b"}{/block}
+
+  </div>
+
+
+  {block name="js-lib"}
+  <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.2/js/bootstrap.bundle.min.js"></script>
+  <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+  </script>
+  {/block}
+
+
+  {block name="js-src-t"}{/block}
+  {block name="script-t"}{/block}
+  {block name="js-src"}{/block}
+  {block name="script"}{/block}
+  {block name="js-src-b"}{/block}
+  {block name="script-b"}{/block}
+
+</body>
+
+</html>

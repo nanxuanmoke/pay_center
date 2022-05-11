@@ -22,4 +22,12 @@ return [
     'taglib_begin'  => '{',
     // 标签库标签结束标记
     'taglib_end'    => '}',
+    // 输出替换
+    'tpl_replace_string' => [
+        '__ADMIN_STATIC__' => env('admin.staticFileDomain', '') . env('admin.staticFilePath', '/admin_static'),
+        '__ADMIN_IMAGES__' => env('admin.staticFileDomain', '') . env('admin.staticFilePath', '/admin_static') . '/images',
+        '__STATIC__'       => env('staticFile.domain', '') . '/static',
+        '__IMAGES__'       => env('staticFile.domain', '') . '/static/images',
+        '__CSS__'          => env('staticFile.domain', '') . '/static/css'
+    ]
 ];
