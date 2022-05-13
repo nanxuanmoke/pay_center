@@ -36,7 +36,6 @@ class Initialize
             util_common_view::alert_danger($内容);
         }
 
-
         return $next($request);
     }
 }

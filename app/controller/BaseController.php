@@ -50,11 +50,11 @@ abstract class BaseController
         View::assign('request', $this->request);
 
         // 控制器初始化
-        $this->initialize();
+        $this->init();
     }
 
     // 初始化
-    protected function initialize()
+    protected function init()
     {
     }
 
