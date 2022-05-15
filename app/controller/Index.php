@@ -7,7 +7,7 @@ use think\facade\View;
 
 class Index extends ControllerBaseController
 {
-    public function index()
+    public function index(): string
     {
         $this->setPageTitle('项目介绍');
         return View::fetch('');
